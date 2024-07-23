@@ -1,0 +1,227 @@
+/* background-color: #242424; */
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.container {
+  background-color: #f2f2f2;
+  display: grid;
+  grid-template-rows: 70vh 30vh;
+  //   grid-template-columns: repeat(8, [col-start] 1fr[col-end]);
+  grid-template-columns: [start] repeat(8, [col-start] 1fr [col-end]) [end];
+
+  &__header {
+    grid-column: 1/-1;
+    background-image: linear-gradient(
+        to right,
+        rgba(#242424, 0.75),
+        rgba(#242424, 0.75)
+      ),
+      url("./assets/cricket_stadium.jpg");
+    background-size: cover;
+    background-position: center;
+    // background-blend-mode: screen;
+    align-content: center;
+    justify-content: center;
+  }
+}
+
+.scorecard {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  &__card {
+    background-color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 1rem 4rem;
+    border-radius: 50px;
+    &__team {
+      color: #cbcbcb;
+      text-transform: uppercase;
+    }
+    &__stat {
+      font-weight: 800;
+      &__score {
+        font-size: 2rem;
+      }
+      &__overs {
+        font-size: 1rem;
+      }
+    }
+    &__runrate {
+      color: #cbcbcb;
+    }
+  }
+}
+
+.scoresheet {
+  grid-column: col-start 2 / col-end 7;
+  padding-top: 2rem;
+
+  &__header {
+    padding-top: 1rem;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: [start] repeat(3, [col-start]1fr[col-end]) [end];
+    grid-gap: 1rem;
+    font-size: 2rem;
+
+    align-items: center;
+    justify-items: center;
+
+    &__stats__batting {
+      &__parameters {
+        color: #cbcbcb;
+
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: [start]2fr repeat(4, [col-start]1fr[col-end]) [end];
+        justify-items: center;
+        align-items: center;
+      }
+      &__values {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: [start]2fr repeat(4, [col-start]1fr[col-end]) [end];
+        justify-items: center;
+        align-items: center;
+      }
+    }
+    &__extras {
+      &__text-color {
+        color: #cbcbcb;
+      }
+    }
+    &__stats__bowling {
+      &__parameters {
+        color: #cbcbcb;
+
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: [start]2fr repeat(4, [col-start]1fr[col-end]) [end];
+        justify-items: center;
+        align-items: center;
+      }
+      &__values {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: [start]2fr repeat(4, [col-start]1fr[col-end]) [end];
+        justify-items: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.section__footer {
+  grid-column: 1/-1;
+  background-color: #cbcbcb;
+  clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
+
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: [start]repeat(12, [col-start] 1fr[col-end]) [end];
+
+  &__buttons {
+    grid-column: col-end 1 / col-end 11;
+    margin-top: 2rem;
+
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: [start]repeat(3, [col-start] 1fr[col-end]) [end];
+    &__runs {
+      grid-column: col start 1 / col-end 1;
+    }
+    &__additions {
+      grid-column: col start 2 / col-end 2;
+    }
+    &__utilities {
+      grid-column: col-start 3 / col-end 3;
+    }
+  }
+  &__scores {
+    grid-column: col-start 3 / col-end 10;
+    font-size: 2rem;
+    letter-spacing: 3rem;
+    color: #242424;
+
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: [start] repeat(3, [col-start]1fr[col-end]) [end];
+
+    justify-items: center;
+    align-items: center;
+    &__recent-1 {
+      grid-column: col start 1 / col-end 1;
+    }
+    &__recent-2 {
+      grid-column: col start 2 / col-end 2;
+    }
+    &__recent-3 {
+      grid-column: col start 2 / col-end 2;
+    }
+  }
+}
+
+// ----------------------Individual Styling---------------
+//Styling-Buttons
+.btns {
+  display: flex;
+  padding: 1rem 1rem;
+  justify-content: space-evenly;
+  &__btn-runs {
+    cursor: pointer;
+    font-size: 2rem;
+    background-color: #242424;
+    padding: 1.5rem 2.2rem;
+    border-radius: 50%;
+    border: 0;
+    color: #f2f2f2;
+  }
+  &__btn-additions {
+    cursor: pointer;
+    font-size: 2rem;
+    background-color: #242424;
+    padding: 1.5rem 2.2rem;
+    border-radius: 30px;
+    border: 0;
+    color: #f2f2f2;
+  }
+}
+
+//Overwriting utls button to make two stick closer
+.btns__utls {
+  padding: 1rem 1rem;
+
+  display: flex;
+  justify-content: center;
+
+  &__btn-utilities {
+    margin-right: 1rem;
+    cursor: pointer;
+    font-size: 2rem;
+    background-color: #242424;
+    padding: 1.5rem 2.2rem;
+    border-radius: 30px;
+    border: 0;
+    color: #f2f2f2;
+  }
+}
