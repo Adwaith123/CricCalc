@@ -1,0 +1,1 @@
+export { TeamScore } from './TeamScore';

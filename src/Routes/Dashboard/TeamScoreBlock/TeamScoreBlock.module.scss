@@ -1,0 +1,16 @@
+@import '../../../Styles/main';
+
+.teamScore {
+  display: flex;
+  justify-content: center;
+  padding: 5rem 0;
+  &__inner {
+    justify-content: space-evenly;
+    display: flex;
+    flex: 1 1 auto;
+    @include media('mobile') {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+}

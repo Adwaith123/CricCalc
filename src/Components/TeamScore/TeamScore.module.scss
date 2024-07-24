@@ -1,0 +1,24 @@
+.teamScore {
+  display: flex;
+  column-gap: 6px;
+  flex-wrap: nowrap;
+  font-size: 2rem;
+  &__labelBlock {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+  &__scores {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 12px;
+    > section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      > span:first-child {
+        font-weight: 400;
+        color: hsl(0deg 0% 50%);
+      }
+    }
+  }
+}

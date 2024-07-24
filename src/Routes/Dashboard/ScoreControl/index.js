@@ -1,0 +1,1 @@
+export { ScoreControl } from './ScoreControl';

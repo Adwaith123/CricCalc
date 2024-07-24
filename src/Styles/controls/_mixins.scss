@@ -1,0 +1,27 @@
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin perfect-square($size) {
+  min-width: $size;
+  max-width: $size;
+  min-height: $size;
+  max-height: $size;
+}
+
+@mixin scrollbar($size: 6px, $thumb-color: hsl(0deg 0% 80%)) {
+  &::-webkit-scrollbar {
+    display: block;
+    @include square($size);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumb-color;
+    border-radius: $size;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: hsl(0deg 0% 90%);
+    @include square($size);
+    border-radius: $size;
+  }
+}
