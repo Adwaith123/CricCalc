@@ -1,0 +1,8 @@
+.labelValue {
+  display: flex;
+  column-gap: 6px;
+  &__label {
+    font-weight: 400;
+    color: hsl(0deg 0% 50%);
+  }
+}
